@@ -1,0 +1,56 @@
+/* Produs Styles */
+.produs {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .produs-image {
+    width: 100px; /* Adjust the image width as needed */
+    height: 100px; /* Adjust the image height as needed */
+    margin-right: 10px;
+  }
+
+  .produs-details {
+    flex-grow: 1;
+  }
+
+  .produs-name {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .produs-expiration {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .produs-dietary {
+    margin: 5px 0;
+  }
+
+  .dietary-vegan, .dietary-vegetarian {
+    margin-right: 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .dietary-vegan {
+    background-color: #2ecc71; /* Green color for vegan */
+  }
+
+  .dietary-vegetarian {
+    background-color: #3498db; /* Blue color for vegetarian */
+  }
+
+  .dietary-carnivor {
+    background-color: #e92963;
+  }
+
+.produs-warning {
+    background-color: #f39c12; /* Warning color for one day away from expiration */
+  }

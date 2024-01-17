@@ -6,6 +6,9 @@ import Frigider from './Components/Frigider';
 import Filtru from './Components/Filtru';
 import Form from './Components/Form';
 import axios from 'axios'; // eslint-disable-line
+import LoadingSpinner from './Components/LoadSpinner';
+import FriendForm from './Components/FriendForm';
+import MyFriends from './Components/MyFriends';
 
 
 function App() {
@@ -20,8 +23,8 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/produse');
-        console.log('response:', response.data);
+        const response = await axios.get('http://localhost:5000/');
+        // console.log('response:', response.data);
         setProduse(response.data);
       } catch (error) {
         console.error('Error getting produse:', error);
@@ -31,24 +34,38 @@ function App() {
     };
 
     fetchData();
-  }, [produse]);
+  }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      console.log(id);
+      // Make an API request to delete the product with the given id
+      await axios.delete(`http://localhost:5000/produs/${id}`);
+
+      // Update the state to remove the deleted product
+      setProduse(prevProduse => prevProduse.filter(produs => produs.id !== id));
+    } catch (error) {
+      console.error('Error deleting produs:', error);
+    }
+  };
 
   let produseFiltrate = [];
   console.log('produse:', produse);
 
-  if (produse.length !== 0){
+  produseFiltrate = produse.filter(produs => {
+    return (!filtruCarnivor || produs.carnivor) &&
+    (!filtruVegan || produs.vegan) &&
+    (!filtruVegetarian || produs.vegetarian);
+  });
 
-    produseFiltrate = produse.filter(produs => {
-      return (!filtruCarnivor || produs.carnivor) &&
-      (!filtruVegan || produs.vegan) &&
-      (!filtruVegetarian || produs.vegetarian);
-    });
-  }
+  // console.log('produse filtrate:', produseFiltrate);
+
 
   return (
     <React.Fragment>
       <Navbar/>
       <div className='main'>
+      {loading && <LoadingSpinner asOverlay={true} />}
         <Filtru
           filtruVegan={filtruVegan}
           filtruCarnivor={filtruCarnivor}
@@ -62,14 +79,19 @@ function App() {
         {
           loading === false && produse.length !== 0 &&
           <Frigider
-            produse={produse.filter(produs =>
+            produse={produseFiltrate.filter(produs =>
             produs.name && produs.name.toLowerCase().includes(search.toLowerCase())
           )}
-/>
+            onDelete={handleDelete}
+          />
         }
       </div>
-      <div className='main'>
+      <div className='forms'>
         <Form/>
+        <FriendForm/>
+      </div>
+      <div className='friendList'>
+        <MyFriends/>
       </div>
     </React.Fragment>
   );

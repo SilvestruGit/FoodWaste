@@ -6,11 +6,12 @@ import '../CSS/form.css';
 const AddProdusForm = () => {
   const [produsData, setProdusData] = useState({
     name: '',
-    imageSrc: '',
+    imgSrc: '',
     expirationDate: '',
     vegan: false,
     vegetarian: false,
     carnivor: false,
+    // id: ''
   });
 
   const handleChange = (e) => {
@@ -33,12 +34,14 @@ const AddProdusForm = () => {
 
       setProdusData({
         name: '',
-        imageSrc: '',
+        imgSrc: '',
         expirationDate: '',
         vegan: false,
         vegetarian: false,
         carnivor: false,
+        // id: ''
       });
+      window.location.reload();
     } catch (error) {
       console.error('Error adding produs:', error);
     }
@@ -53,7 +56,7 @@ const AddProdusForm = () => {
       <br />
       <label>
         Image Source:
-        <input type="text" name="imageSrc" value={produsData.imageSrc} onChange={handleChange} />
+        <input type="text" name="imgSrc" value={produsData.imgSrc} onChange={handleChange} />
       </label>
       <br />
       <label>

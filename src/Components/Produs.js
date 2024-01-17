@@ -3,7 +3,7 @@ import '../CSS/produs.css';
 import Modal from './Modal';
 import { useState, useEffect } from 'react';
 
-const Produs = ({ imageSrc, name, expirationDate, vegan, vegetarian, carnivor }) => {
+const Produs = ({ imageSrc, name, expirationDate, vegan, vegetarian, carnivor, id, onDelete }) => {
   const [showModal, setShowModal] = useState(false);
 
   const today = new Date();
@@ -36,6 +36,7 @@ const Produs = ({ imageSrc, name, expirationDate, vegan, vegetarian, carnivor })
           {vegetarian && <span className="dietary-vegetarian">Vegetarian</span>}
           {carnivor && <span className="dietary-carnivor">Carnivor</span>}
         </p>
+        <button onClick={() => onDelete(id)}>Delete</button>
       </div>
     </div>
   );

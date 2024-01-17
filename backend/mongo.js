@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+const { ObjectId } = require('mongodb');
 
 const url = 'mongodb+srv://silvestrustate:hhwGZ94bzkux2Y0A@cluster0.m59jcsq.mongodb.net/Produse?retryWrites=true&w=majority';
 
@@ -42,5 +43,35 @@ const getProduse = async (req, res, next) => {
     next();
 };
 
+const deleteProdus = async (req, res, next) => {
+    const client = new MongoClient(url);
+
+    try {
+        await client.connect();
+        const db = client.db();
+
+        const produsId = req.params.id; // Assuming the id is provided as a request parameter
+
+        console.log(prodObjId);
+
+        let prodObjId = new ObjectId(produsId);
+
+        const result = await db.collection('Produse').deleteOne({ _id: prodObjId });
+
+        if (result.deletedCount === 1) {
+            res.json({ message: 'Produs deleted successfully' });
+        } else {
+            res.status(404).json({ message: 'Produs not found' });
+        }
+    } catch (error) {
+        console.error('Error deleting produs:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    } finally {
+        client.close();
+    }
+    next();
+};
+
 exports.createProdus = createProdus;
 exports.getProduse = getProduse;
+exports.deleteProdus = deleteProdus;

@@ -1,33 +1,58 @@
 .add-produs-form {
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    max-width: 400px; /* Adjust the maximum width as needed */
-  }
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    border: 1px solid #e6e6e6;
+}
 
-  .add-produs-form label {
+.add-produs-form label {
     display: block;
-    margin-bottom: 10px;
-    /* color: aquamarine; */
-  }
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+}
 
-  .add-produs-form input {
-    padding: 5px;
+.add-produs-form input {
+    padding: 12px 15px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10px;
-  }
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
 
-  .add-produs-form button {
+.add-produs-form input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+.add-produs-form button {
     background-color: #3498db;
-    color: #fff;
-    padding: 10px;
+    color: white;
+    padding: 15px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-  }
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
 
-  .add-produs-form button:hover {
+.add-produs-form button:hover {
     background-color: #2980b9;
-  }
+    transform: translateY(-2px);
+}
+
+@media (max-width: 500px) {
+    .add-produs-form {
+        width: 90%;
+        padding: 20px;
+    }
+}

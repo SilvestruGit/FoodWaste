@@ -1,40 +1,34 @@
-/* Centering the Frigider */
-.main {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: row;
-    height: 50vh;
-    margin: 100px;
-  }
+.frigider {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-  .frigider {
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 90%; /* Adjust the width as needed */
-    margin-left: 50px;
-  }
+.frigider h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-  .frigider h2 {
-    margin-bottom: 15px;
-    font-size: 24px;
-  }
+.produse-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-  /* Produse List Styles */
-  .produse-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.produs {
+  flex: 1 1 200px; /* Adjust size here */
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #fff;
+}
 
-  /* Adjust the width and margin as needed for responsiveness */
+@media (max-width: 768px) {
   .produs {
-    flex: 0 0 calc(33.33% - 20px);
-    margin: 10px;
+    flex-basis: calc(50% - 20px);
   }
-
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-    .produs {
-      flex: 0 0 calc(50% - 20px);
-    }
-  }
+}

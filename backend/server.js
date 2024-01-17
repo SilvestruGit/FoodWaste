@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoServ = require('./mongo');
 
-// const app = express();
+const app = express();
 
 app.use(bodyParser.json());
 

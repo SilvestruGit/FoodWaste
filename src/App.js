@@ -51,13 +51,21 @@ function App() {
 
   let produseFiltrate = [];
   console.log('produse:', produse);
+  const [friendsList, setFriendsList] = useState([
+    { id: 1, name: 'Alice', dietaryPreference: 'vegan' },
+    { id: 2, name: 'Bob', dietaryPreference: 'vegetarian' },
+    { id: 3, name: 'Charlie', dietaryPreference: 'carnivore' },
+    // Add more friends as needed
+  ]);
 
   produseFiltrate = produse.filter(produs => {
     return (!filtruCarnivor || produs.carnivor) &&
     (!filtruVegan || produs.vegan) &&
     (!filtruVegetarian || produs.vegetarian);
   });
-
+  const addFriend = (friend) => {
+    setFriendsList([...friendsList, { ...friend, id: friendsList.length + 1 }]);
+  };
   // console.log('produse filtrate:', produseFiltrate);
 
 
@@ -86,13 +94,14 @@ function App() {
           />
         }
       </div>
+      <div className='friendList'>
+        <MyFriends friendsList={friendsList}/>
+      </div>
       <div className='forms'>
         <Form/>
-        <FriendForm/>
+        <FriendForm addFriend={addFriend}/>
       </div>
-      <div className='friendList'>
-        <MyFriends/>
-      </div>
+     
     </React.Fragment>
   );
 }

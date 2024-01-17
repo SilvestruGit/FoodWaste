@@ -1,37 +1,37 @@
 /* Navbar Styles */
 .navbar {
-    background-color: #3498db; /* Change the background color as needed */
-    padding: 10px;
-    text-align: center;
-  }
+  background-color: #3498db; /* Change the background color as needed */
+  padding: 10px;
+  text-align: center;
+}
 
-  /* Navbar List Styles */
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-  }
+/* Navbar List Styles */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
 
-  .navbar li {
-    display: inline-block;
-    margin-right: 20px; /* Adjust the spacing between navbar items */
-  }
+.navbar li {
+  display: inline-block;
+  margin-right: 20px; /* Adjust the spacing between navbar items */
+}
 
-  .navbar li:last-child {
-    margin-right: 0; /* Remove margin for the last item to avoid extra space */
-  }
+.navbar li:last-child {
+  margin-right: 0; /* Remove margin for the last item to avoid extra space */
+}
 
-  /* Navbar Link Styles */
-  .navbar li a {
-    text-decoration: none;
-    color: #fff; /* Change the text color as needed */
-    font-weight: bold;
-    font-size: 16px; /* Adjust the font size as needed */
-  }
+/* Navbar Link Styles */
+.navbar li a {
+  text-decoration: none;
+  color: #fff; /* Change the text color as needed */
+  font-weight: bold;
+  font-size: 16px; /* Adjust the font size as needed */
+}
 
-  /* Navbar Link Hover Styles */
-  .navbar li a:hover {
-    color: #e74c3c; /* Change the hover color as needed */
-  }
+/* Navbar Link Hover Styles */
+.navbar li a:hover {
+  color: #e74c3c; /* Change the hover color as needed */
+}

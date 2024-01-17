@@ -1,25 +1,18 @@
-import React from 'react';
-import '../CSS/friendList.css';
+import React from "react";
+import "../CSS/friendList.css";
 
-const MyFriends = () => {
-  const friendsList = [
-    { id: 1, name: 'Alice', dietaryPreference: 'vegan' },
-    { id: 2, name: 'Bob', dietaryPreference: 'vegetarian' },
-    { id: 3, name: 'Charlie', dietaryPreference: 'carnivore' },
-    // Add more friends as needed
-  ];
-
+const MyFriends = ({ friendsList }) => {
   return (
-    <div>
-      <h2>My Friends</h2>
-      <ul>
-        {friendsList.map((friend) => (
-          <li key={friend.id}>
-            {friend.name} - {friend.dietaryPreference}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div className="friends-container">
+    <h2>My Friends</h2>
+    <ul className="friends-list">
+      {friendsList.map((friend) => (
+        <li key={friend.id} className="friend-item">
+          <span className="friend-name">{friend.name}</span> - <span className="dietary-preference">{friend.dietaryPreference}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 };
 

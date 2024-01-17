@@ -68,7 +68,9 @@ function App() {
 />
         }
       </div>
-      <Form/>
+      <div className='main'>
+        <Form/>
+      </div>
     </React.Fragment>
   );
 }

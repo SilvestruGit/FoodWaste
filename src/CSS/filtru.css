@@ -1,0 +1,30 @@
+/* Add this to your CSS file */
+.filtru {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .filtru ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .filtru li {
+    margin-bottom: 10px;
+  }
+
+  label {
+    margin-right: 5px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .search {
+    padding: 5px;
+    width: 150px;
+  }

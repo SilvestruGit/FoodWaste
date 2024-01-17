@@ -1,0 +1,33 @@
+.add-produs-form {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 400px; /* Adjust the maximum width as needed */
+  }
+
+  .add-produs-form label {
+    display: block;
+    margin-bottom: 10px;
+    /* color: aquamarine; */
+  }
+
+  .add-produs-form input {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .add-produs-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .add-produs-form button:hover {
+    background-color: #2980b9;
+  }
